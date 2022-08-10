@@ -3,6 +3,7 @@ import {hands} from "./Hands";
 import {calculatePokerHand} from "./PokerHand";
 import Navbar from "../../../structure/navbar/Navbar";
 import "./PokerfaceExercise.scss";
+import TypingCaret from "../../../structure/typing-caret/TypingCaret";
 
 export const PokerHandsExercise: FC = () => {
     const [input, setInput] = useState(hands);
@@ -31,6 +32,7 @@ export const PokerHandsExercise: FC = () => {
             <button className="process-button" onClick={execute}>Process</button>
             <h3 className="pokerface-exercise__sub-title">Output:</h3>
             <p className="pokerface-exercise__results">
+                {!output && <TypingCaret/>}
                 <p>{output}</p>
             </p>
         </div>

@@ -14,10 +14,10 @@ const NotFound: FC = () => {
             <div className="not-found__body">
                 <img src={image} alt={"dennis-nedry"}/>
                 <h1 className="not-found__body__message">Page Not Found!</h1>
-                <h1 className="not-found__body__message">Oi, get back to Pokerface!</h1>
+                <h1 className="not-found__body__message">Oi, Pokerface, go back the ways or return to the menu!</h1>
 
                 <h1 className="not-found__back-to-exercise" onClick={() => goToUrl("/")}>
-                    Back to Exercise
+                    Back to Menu
                 </h1>
             </div>
         </div>
