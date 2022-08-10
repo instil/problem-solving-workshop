@@ -7,7 +7,7 @@ import TypingCaret from "../../../structure/typing-caret/TypingCaret";
 const ErrorHandling: FC = () => {
     const [input, setInput] = useState("");
     const [output, setOutput] = useState("");
-    const [errorMessage, setErrorMessage] = useState("")
+    const [errorMessage, setErrorMessage] = useState("");
 
     const submitForm = (event: React.FormEvent<HTMLFormElement>) => {
         try {
@@ -17,13 +17,13 @@ const ErrorHandling: FC = () => {
         } catch (error) {
             setErrorMessage("Please enter a valid username.");
         }
-    }
+    };
 
     const onChange = (event: ChangeEvent<HTMLInputElement>) => {
         setInput(event.currentTarget.value);
         setOutput("");
         setErrorMessage("");
-    }
+    };
 
     return (
         <>

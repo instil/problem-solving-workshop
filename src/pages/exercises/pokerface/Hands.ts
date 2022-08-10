@@ -9,4 +9,4 @@ export const hands = `3H JS 3C 7C 5D
                       KH TH AH JH QH
                       7C 2H KD 7H 7S
                       2C 2H KD 7H 7S
-                      1C 2D 3C 4D 6S`.replace(/^ +/mg, '');
+                      1C 2D 3C 4D 6S`.replace(/^ +/mg, "");

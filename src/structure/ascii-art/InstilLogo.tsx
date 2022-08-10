@@ -3,7 +3,6 @@ import "./InstilLogo.scss";
 
 const InstilLogo: FC = () => {
     return (
-
         <pre className="instil-logo">
             <p>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</p>
             <p>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</p>
@@ -26,6 +25,6 @@ const InstilLogo: FC = () => {
         </pre>
 
     );
-}
+};
 
 export default InstilLogo;

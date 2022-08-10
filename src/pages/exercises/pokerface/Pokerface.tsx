@@ -17,7 +17,7 @@ export const PokerHandsExercise: FC = () => {
             .map(calculatePokerHand)
             .join("\n");
 
-        setOutput(result)
+        setOutput(result);
     }
 
     return (
@@ -37,7 +37,7 @@ export const PokerHandsExercise: FC = () => {
                 </p>
             </div>
         </>
-    )
+    );
 };
 
 export default PokerHandsExercise;

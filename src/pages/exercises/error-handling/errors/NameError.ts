@@ -3,14 +3,14 @@ export class NameError {
         const error = Error(message);
 
         // set immutable object properties
-        Object.defineProperty(error, 'message', {
+        Object.defineProperty(error, "message", {
             get() {
                 return message;
             }
         });
-        Object.defineProperty(error, 'name', {
+        Object.defineProperty(error, "name", {
             get() {
-                return 'NameError';
+                return "NameError";
             }
         });
 
