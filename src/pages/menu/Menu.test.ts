@@ -5,6 +5,6 @@ describe("Menu", () => {
     })
 
     it("should be false", () => {
-        expect(false).toBe(false);
+        expect(false).toBe(true);
     })
 });
