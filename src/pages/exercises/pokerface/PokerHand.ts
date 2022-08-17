@@ -30,7 +30,7 @@ function kickoffChainOfResponsibility(cards: Card[]): string {
 }
 
 function isRoyalFlush(cards: Card[]) {
-    const isAllRoyal = cards.map(card => card.value).reduce((previousValue, currentValue) => previousValue + currentValue) === 50;
+    const isAllRoyal = cards.map(card => card.value).reduce((previousValue, currentValue) => previousValue + currentValue) === 37;
     const isRun = isAStraight(cards);
 
     return isAllRoyal && isRun ? "Royal Flush" : isStraightFlush(cards);
