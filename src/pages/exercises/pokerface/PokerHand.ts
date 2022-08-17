@@ -1,7 +1,7 @@
 // TODO: Solutions goes here
 //       Return a string of the name of the poker hand
 //       https://en.wikipedia.org/wiki/List_of_poker_hands
-import {groupBy, orderBy, result, sortBy} from "lodash";
+import {groupBy, orderBy} from "lodash";
 
 interface Card {
     value: number,
@@ -37,23 +37,15 @@ function isRoyalFlush(cards: Card[]) {
 }
 
 function isStraightFlush(cards: Card[]) {
-    const isFlush = isAFlush(cards);
-    const isRun = isAStraight(cards);
-
-    return isFlush && isRun ? "Straight Flush" : isFourOfAKind(cards);
+    return isAFlush(cards) && isAStraight(cards) ? "Straight Flush" : isFourOfAKind(cards);
 }
 
 function isFourOfAKind(cards: Card[]): string {
-    const containsFourOfAKind = containsRepeatedCards(cards, 4);
-
-    return containsFourOfAKind ? "Four of A Kind" : isFullHouse(cards);
+    return containsRepeatedCards(cards, 4) ? "Four of A Kind" : isFullHouse(cards);
 }
 
 function isFullHouse(cards: Card[]) {
-    const containsThreeOfAKind = containsRepeatedCards(cards, 3);
-    const remainingTwoCardsMatch = containsRepeatedCards(cards, 2);
-
-    return containsThreeOfAKind && remainingTwoCardsMatch ? "Full House" : isFlush(cards);
+    return containsRepeatedCards(cards, 3) && containsRepeatedCards(cards, 2) ? "Full House" : isFlush(cards);
 }
 
 function isFlush(cards: Card[]) {
@@ -61,7 +53,6 @@ function isFlush(cards: Card[]) {
 }
 
 function isStraight(cards: Card[]) {
-
     return isAStraight(cards) ? "Straight" : isThreeOfAKind(cards);
 }
 
