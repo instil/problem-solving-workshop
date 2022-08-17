@@ -3,5 +3,5 @@
 //       https://en.wikipedia.org/wiki/List_of_poker_hands
 export function calculatePokerHand(hand: string) {
 
-    return "Unknown";
+    return "Unknownn";
 }
