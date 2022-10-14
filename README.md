@@ -1,46 +1,68 @@
-# Getting Started with Create React App
+# Poker Face
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Taking a hand of 5 cards in the format of 3H with the '3' being the rank and 'H' being the suit determine what poker hand the input is.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Running the app
 
-### `npm start`
+`nvm use`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+`npm install`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+`npm start`
 
-### `npm test`
+## Expected outputs
+The list of options are illustrated here (excluding the joker card): https://en.wikipedia.org/wiki/List_of_poker_hands#Hand-ranking_categories
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Suits and Ranks
 
-### `npm run build`
+The 52 card deck is illustrated here: https://en.wikipedia.org/wiki/Standard_52-card_deck#Composition
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Suits
+The suits are as follows:
+- S: Spades
+- H: Hearts
+- C: Clubs
+- D: Diamonds
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Ranks
+The ranks are as follows:
+- 2-9: the number representation
+- 10: `T`
+- J: Jack
+- Q: Queen
+- K: King
+- A: Ace
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Ace is a special card that can either be at the start (as rank 1) or at the end (as rank 14)
 
-### `npm run eject`
+### Inputs and Outputs
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The inputs will come in as a white space separated string such as `3H JS 3C 7C 5D`.
+The output will be `HAND_INPUT => HAND_RESULT` i.e. `TH 9S 8H 7C 6C => Straight`.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The list of outputs are:
+- `High Card`
+- `One pair`
+- `Two pair`
+- `Three of a kind`
+- `Straight`
+- `Flush`
+- `Full house`
+- `Four of a kind`
+- `Straight flush`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Only the best outcome is expected to be the output.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Error handling
+If the input is invalid then the output will be `Unknown`. 
+Invalid outputs will be:
+- Incorrect card hand (only 5 cards in the hand)
+- Unknown rank or suits
+- Duplicate cards
 
-## Learn More
+### Where the write your solution
+`src/pages/exercises/pokerface/PokerHand.ts`
+Changes should be reflected on the UI
+Bonus points for using TDD (write your tests before the implementation) but any tests are good :)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
